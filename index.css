@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -69,7 +72,6 @@ p {
 .aba-login {
     background-image: url('assents/floresta1.png');
     background-size: cover; /* Isso faz com que a imagem cubra todo o fundo */
-    background-attachment: fixed; /* Isso faz com que a imagem permaneça fixa enquanto você rola a página */
     background-position: center; /* Isso centraliza a imagem no fundo */
     margin: 0;
     padding: 0;
@@ -88,9 +90,9 @@ p {
     
 }
 
-.card-login h2{
+.card-login h3{
     font-size: 40px;
-    margin-bottom: 20px; /* Espaço de 20px entre o rótulo E-mail e o próximo elemento */
+    margin-bottom: 20px; 
 
 }
 
@@ -147,5 +149,44 @@ h1 {
     border:#FEC74FC9;
     font-size: 60px;
     font-weight: bold;
+    padding: 15px;
+    padding-left: 240px;
 }
 
+h2{
+    border:#FEC74FC9;
+    font-size: 60px;
+    font-weight: bold;
+    padding-left: 200px;
+}
+
+.meu {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 136px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: absolute;
+    
+}
+
+.diario {
+    font-family: 'Carattere', sans-serif;
+    font-size: 180px;
+    font-weight: 400;
+    line-height: 207px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: absolute;
+    top: 200px;
+    
+}
+
+h1 {
+    border:#FEC74FC9;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 15px;
+    padding-left: 240px;
+}
