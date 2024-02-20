@@ -1,0 +1,25 @@
+header{
+    background-color: #fbd67e;
+    width: auto;
+    height: 40px;
+    margin: auto;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #000; /* Cor dos links */
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
