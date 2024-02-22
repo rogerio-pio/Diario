@@ -4,40 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina02</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="style_pagina01_pagina02.css">
 </head>
-<body class="aba-login">
+<body>
     <header>
 
     </header>
 
-    <main>
+    <main id="main-pag2">
         <div class="title-container">
             <h1 class="meu">MEU</h1>
-            <h2 class="diario">diário</h2>
-        </div>
-    </main>
-    
-    <div class="main-login">
-        <div class="right-login">
-            <div class="card-login">
-                <h3>LOGIN</h3>
-                <div class="textfield">
-                    <label for="email">E-mail</label>
-                    <input type="text" name="email">
-                </div>
-                <div class="textfield">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" >
-                </div>
-                <button class="btn-login">Entrar</button>
-                <div class="additional-buttons">
-                    <button class="btn-esqcsenha">Esqueceu a senha?</button>
-                    <button class="btn-nova-conta">Criar nova conta</button>
-                </div>
+            <div id="diario_box">
+                <h2 class="diario">diário</h2>
+                <img id="yellow_retangulo" src="assents/Rectangle 3.svg" alt="">
             </div>
         </div>
-    </div>
     
+        <form class="main-login" method="post" action="">
+            <div class="right-login">
+                <div class="card-login">
+                    <h3>LOGIN</h3>
+                    <div class="textfield">
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" >
+                    </div>
+                    <button type="submit" class="btn-login">Entrar</button>
+                    <div class="additional-buttons">
+                        <button class="btn-esqcsenha">Esqueceu a senha?</button>
+                        <button class="btn-nova-conta">Criar nova conta</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
 </body>
 </html>
