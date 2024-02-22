@@ -23,7 +23,12 @@ header {
 }
 
 main {
-    padding: 20px;
+    /* padding: 20px; */
+}
+
+#main-pag2{
+    display: flex;
+    padding-top: 2rem;
 }
 
 p {
@@ -42,6 +47,33 @@ p {
     display: flex; 
     justify-content: center; 
     align-items: center; 
+}
+
+#diario_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#yellow_retangulo{
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 50px;
+    max-height: 50px;
+    position: relative;
+    margin-top: -130px;
+    margin-left: 20px;
+    z-index: 0;
+}
+.diario{
+    z-index: 1;
+    
+}
+
+.title-container{
+ display: flex;
+ width: 50%;
+ text-align: center;
+ flex-direction: column;
 }
 
 .mini-tela-content {
@@ -68,12 +100,13 @@ p {
     background-color: #555;
 }
 
-.aba-login {
-    background-image: url('imgs/floresta1.png');
-    background-size: cover; /* Isso faz com que a imagem cubra todo o fundo */
-    background-position: center; /* Isso centraliza a imagem no fundo */
-    background-attachment: fixed; /* Isso faz com que a imagem permaneça fixa enquanto você rola a página */
-    margin: 0;
+body {
+    background-image: url("assents/floresta.svg");
+    background-size: 100% auto; /* Estica o eixo x */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: auto;
     padding: 0;
 }
 
@@ -129,6 +162,7 @@ p {
 .main-login {
     display: flex;
     justify-content: right;
+    width: 50%;
 }
 
 .right-login {
@@ -137,18 +171,18 @@ p {
 }
 
 h1 {
-    border:#FEC74FC9;
+    /* border:#FEC74FC9;
     font-size: 60px;
     font-weight: bold;
     padding: 15px;
-    padding-left: 240px;
+    padding-left: 240px; */
 }
 
 h2{
-    border:#FEC74FC9;
+    /* border:#FEC74FC9;
     font-size: 60px;
     font-weight: bold;
-    padding-left: 200px;
+    padding-left: 200px; */
 }
 
 .meu {
@@ -157,10 +191,7 @@ h2{
     font-weight: 800;
     line-height: 136px;
     letter-spacing: 0em;
-    text-align: left;
-    position: absolute;
-    justify-content: center;
-    
+
 }
 
 .diario {
@@ -169,9 +200,6 @@ h2{
     font-weight: 400;
     line-height: 207px;
     letter-spacing: 0em;
-    text-align: left;
-    position: absolute;
-    top: 200px;  
 }
 
 .additional-buttons {
