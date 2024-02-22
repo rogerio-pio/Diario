@@ -26,9 +26,50 @@
         <h2>Aqui é um cantinho para você guardar de recordação se assim desejar<br>
             Você poderá adicionar as fotos e os vídeos que quiser.</h2>
 
+        <button id="botao1" class="botaoAnexo">Adicionar Anexo 1</button>
+        <button id="botao2" class="botaoAnexo">Adicionar Anexo 2</button>
+        <button id="botao3" class="botaoAnexo">Adicionar Anexo 3</button>
+        <button id="botao4" class="botaoAnexo">Adicionar Anexo 4</button>
+
+        <div id="anexosSelecionados"></div>
+
+        <script>
+        function adicionarAnexo(botaoId) {
+            var input = document.createElement('input');
+            input.type = 'file';
+
+            input.addEventListener('change', function() {
+                var divAnexos = document.getElementById('anexosSelecionados');
+                var arquivo = this.files[0];
+                var nomeArquivo = arquivo.name;
+                var tamanhoArquivo = arquivo.size;
+
+                // Adicionar o código para fazer algo com o arquivo, como enviá-lo para o servidor
+
+                divAnexos.innerHTML += '<p>Nome do arquivo: ' + nomeArquivo + ', Tamanho: ' + tamanhoArquivo + ' bytes</p>';
+            });
+
+            input.click();
+        }
+
+        document.getElementById('botao1').addEventListener('click', function() {
+            adicionarAnexo('botao1');
+        });
+        document.getElementById('botao2').addEventListener('click', function() {
+            adicionarAnexo('botao2');
+        });
+        document.getElementById('botao3').addEventListener('click', function() {
+            adicionarAnexo('botao3');
+        });
+        document.getElementById('botao4').addEventListener('click', function() {
+            adicionarAnexo('botao4');
+        });
+        </script>
+        
         <a href="">
-            <button>Adicionar</button>
+            <button id="adicionar">Adicionar</button>
         </a>
+
     </main>
 
 

@@ -52,14 +52,21 @@ main h2{
     font-size: 26px;
 }
 
-button{
+#adicionar{
     font-size: 1.1em;
     font-weight:600;
     color: white;
     background-color: #F36950;
-    margin: 50px 33%;
+    margin: 30vh 33%;
     width: 440px;
     height: 28px;
     border-radius: 15px;
     border-style: none;
+}
+
+.botaoAnexo {
+    display: block;
+    width: 200px;
+    margin-bottom: 20px;
+    margin-left: 50px;
 }
