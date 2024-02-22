@@ -6,14 +6,7 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-header {
+.barra-cabecalho {
     background-color: #FEC74FB2;
     color: #fff;
     height: 5px;
@@ -100,14 +93,16 @@ p {
     background-color: #555;
 }
 
-body {
-    background-image: url("assents/floresta.svg");
+.background-img {
+    background-image: url("../imgs/floresta1.png");
     background-size: 100% auto; /* Estica o eixo x */
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: auto;
     padding: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
 }
 
 .textfield label {
