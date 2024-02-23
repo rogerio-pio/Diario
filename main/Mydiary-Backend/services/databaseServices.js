@@ -19,6 +19,9 @@ class databaseServices{
                 response3 TEXT,
                 response4 TEXT,
                 response5 TEXT,
+                response6 TEXT,
+                response7 TEXT,
+                response8 TEXT,
                 creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );`
         const query3 = `
@@ -59,9 +62,9 @@ class databaseServices{
     }
     async addNotes(notes){
         try{
-            const query = 'INSERT INTO notes (userID, response1, response2, response3, response4, response5) VALUES (?, ?, ?, ?, ?, ?)';
+            const query = 'INSERT INTO notes (userID, response1, response2, response3, response4, response5, response6, response7, response8) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
             const result = await new Promise((resolve, reject)=>{
-                this.con.query(query, [notes.userID, notes.res1, notes.res2, notes.res3, notes.res4, notes.res5], (err, result) => {
+                this.con.query(query, [notes.userID, notes.res1, notes.res2, notes.res3, notes.res4, notes.res5, notes.res6, notes.res7, notes.res8], (err, result) => {
                     if(err) reject(err);
                     else resolve(result);
                 });
