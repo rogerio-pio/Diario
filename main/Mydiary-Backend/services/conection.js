@@ -5,7 +5,7 @@ const conection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: db_key,
+    password: 'JeielSQL',
     database: 'mydiary'
 });
 module.exports = conection;

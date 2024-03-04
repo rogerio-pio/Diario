@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina02</title>
     <link rel="stylesheet" href="css/diario_pagina01e02.css">
+    <script src="js/index.js"></script>
 </head>
 <body class="background-img">
     <header class="barra-cabecalho">
@@ -20,17 +21,17 @@
             </div>
         </div>
     
-        <form class="main-login" method="post" action="">
+        <form class="main-login" id="myForm">
             <div class="right-login">
                 <div class="card-login">
                     <h3>LOGIN</h3>
                     <div class="textfield">
                         <label for="email">E-mail</label>
-                        <input type="text" name="email">
+                        <input type="text" name="email" id="email" required>
                     </div>
                     <div class="textfield">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" >
+                        <input type="password" name="senha" id="senha" required>
                     </div>
                     <button type="submit" class="btn-login">Entrar</button>
                     <div class="additional-buttons">

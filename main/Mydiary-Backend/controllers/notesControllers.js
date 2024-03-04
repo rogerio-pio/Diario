@@ -7,11 +7,14 @@ class notesControllers{
         try{
             const notes = req.body;
             const authHeader = req.headers['authorization'];
-            const code = authHeader && authHeader.split(" ")[1];
+            const code = authHeader;
             if(!token) return res.status(401).json({msg: 'Faça login para acessar!'});
             if(!token.check(code)) return res.status(401).json({msg: 'Login Inválido!'});
+            console.log("Code Check: "+token.check(code))
             const id = token.decode(code);
             notes.userID = id.foo;
+            console.log("notes" + notes);
+            console.log("body" + req.body)
             const notesUploaded = database.addNotes(notes);
             if(notesUploaded) return res.status(200).json({msg: 'nota cadastrada com sucesso!'});
             return res.status(500).json({msg: 'erro interno do servidor'});
@@ -48,7 +51,7 @@ class notesControllers{
         try{
             const notes = req.body;
             const authHeader = req.headers['authorization'];
-            const code = authHeader && authHeader.split(" ")[1];
+            const code = authHeader;
             if(!token) return res.status(401).json({msg: 'Faça login para acessar!'});
             if(!token.check(code)) return res.status(401).json({msg: 'Login Inválido!'});
             const id = token.decode(code);
@@ -66,7 +69,7 @@ class notesControllers{
         try{
             const notes = req.body;
             const authHeader = req.headers['authorization'];
-            const code = authHeader && authHeader.split(" ")[1];
+            const code = authHeader;
             if(!token) return res.status(401).json({msg: 'Faça login para deletar!'});
             if(!token.check(code)) return res.status(401).json({msg: 'Login Inválido!'});
             const id = token.decode(code);

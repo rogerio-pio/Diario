@@ -6,7 +6,7 @@ class databaseServices{
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(50),
                 email VARCHAR(100) UNIQUE,
-                password VARCHAR(30),
+                password VARCHAR(255),
                 creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
             `

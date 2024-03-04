@@ -6,7 +6,7 @@ class userControllers{
     async signup(req, res){
         try{
             let user = req.body;
-            const userExists = await database.checkExists('users', 'username', user.username);
+            const userExists = await database.checkExists('users', 'email', user.email);
             if(userExists) return res.status(401).json({msg: 'Login já cadastrado!'});
             const hash = await encrypt.encrypt(user.password);
             user.password = hash;
@@ -21,9 +21,9 @@ class userControllers{
     async signin(req, res){
         try{
             let user = req.body
-            const userExists = await database.checkExists('users', 'username', user.username)
+            const userExists = await database.checkExists('users', 'email', user.email)
             if(!userExists) return res.status(401).json({msg: 'Login não foi encontrado!'})
-            const dbUser = await database.get('users', 'username', user.username)
+            const dbUser = await database.get('users', 'email', user.email)
             const validPassword = await encrypt.validate(user.password, dbUser.password)
             if(validPassword){
                 const userToken = await token.create(dbUser.id)

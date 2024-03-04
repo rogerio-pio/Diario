@@ -1,9 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const router = express.Router();
 const userController = require('./controllers/userControllers');
 const notesController = require('./controllers/notesControllers');
 const imagesController = require('./controllers/imagesControllers');
 const path = require('path');
+
+router.use(cors());
 
 ///Rota dinâmica de imagem: localhost:8080/uploads/[titulo da imagem].[extensão - ex: pgn, jpg, jpeg]
 router.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -15,7 +18,7 @@ router.post('/signup', userController.signup);
 router.post('/editUser', userController.edit);
 
 ///Rotas de Notas
-router.get('/getNotes', notesController.get);
+router.get('/getNote', notesController.get);
 router.post('/newNote', notesController.new);
 router.post('/editNote', notesController.edit);
 router.delete('/deleteNote', notesController.delete);
