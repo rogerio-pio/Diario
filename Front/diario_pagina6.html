@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diario página 6</title>
+    <link rel="stylesheet" type="text/css" href="css/diario_pagina6.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul id="navegacao">
+                <li><a href=""><img src="imgs/icon 1.png" alt="" id="icon1"></a></li>
+                <li><a href=""><img src="imgs/icon2.png" alt="" id="icon2"></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="data">
+        <img src="imgs/Rectangle 13.png" alt="data">
+    </div>
+
+    <main>
+        <h2>Aqui é um cantinho para você guardar de recordação se assim desejar<br>
+            Você poderá adicionar as fotos e os vídeos que quiser.</h2>
+
+        <button id="botao1" class="botaoAnexo">Adicionar Anexo 1</button>
+        <button id="botao2" class="botaoAnexo">Adicionar Anexo 2</button>
+        <button id="botao3" class="botaoAnexo">Adicionar Anexo 3</button>
+        <button id="botao4" class="botaoAnexo">Adicionar Anexo 4</button>
+
+        <div id="anexosSelecionados"></div>
+
+        <script>
+        function adicionarAnexo(botaoId) {
+            var input = document.createElement('input');
+            input.type = 'file';
+
+            input.addEventListener('change', function() {
+                var divAnexos = document.getElementById('anexosSelecionados');
+                var arquivo = this.files[0];
+                var nomeArquivo = arquivo.name;
+                var tamanhoArquivo = arquivo.size;
+
+                // Adicionar o código para fazer algo com o arquivo, como enviá-lo para o servidor
+
+                divAnexos.innerHTML += '<p>Nome do arquivo: ' + nomeArquivo + ', Tamanho: ' + tamanhoArquivo + ' bytes</p>';
+            });
+
+            input.click();
+        }
+
+        document.getElementById('botao1').addEventListener('click', function() {
+            adicionarAnexo('botao1');
+        });
+        document.getElementById('botao2').addEventListener('click', function() {
+            adicionarAnexo('botao2');
+        });
+        document.getElementById('botao3').addEventListener('click', function() {
+            adicionarAnexo('botao3');
+        });
+        document.getElementById('botao4').addEventListener('click', function() {
+            adicionarAnexo('botao4');
+        });
+        </script>
+        
+        <a href="">
+            <button id="adicionar">Adicionar</button>
+        </a>
+
+    </main>
+
+
+</body>
+
+</html>
