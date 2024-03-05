@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diario página 6</title>
+    <script src="js/addNote.js"></script>
     <link rel="stylesheet" type="text/css" href="css/diario_pagina6.css">
 </head>
 
@@ -34,45 +35,49 @@
         <div id="anexosSelecionados"></div>
 
         <script>
-        function adicionarAnexo(botaoId) {
-            var input = document.createElement('input');
-            input.type = 'file';
+            var arquivosSelecionados = []; // Lista para armazenar arquivos selecionados
 
-            input.addEventListener('change', function() {
-                var divAnexos = document.getElementById('anexosSelecionados');
-                var arquivo = this.files[0];
-                var nomeArquivo = arquivo.name;
-                var tamanhoArquivo = arquivo.size;
+            function adicionarAnexo(botaoId) {
+                var input = document.createElement('input');
+                input.type = 'file';
 
-                // Adicionar o código para fazer algo com o arquivo, como enviá-lo para o servidor
+                input.addEventListener('change', function() {
+                    var divAnexos = document.getElementById('anexosSelecionados');
+                    var arquivo = this.files[0];
+                    var nomeArquivo = arquivo.name;
+                    var tamanhoArquivo = arquivo.size;
+                    divAnexos.innerHTML += '<p>Nome do arquivo: ' + nomeArquivo + ', Tamanho: ' + tamanhoArquivo + ' bytes</p>';
 
-                divAnexos.innerHTML += '<p>Nome do arquivo: ' + nomeArquivo + ', Tamanho: ' + tamanhoArquivo + ' bytes</p>';
+                    arquivosSelecionados.push(arquivo); // Adiciona o arquivo à lista de arquivos selecionados
+                });
+
+                input.click();
+            }
+
+            document.getElementById('botao1').addEventListener('click', function() {
+                adicionarAnexo('botao1');
+            });
+            document.getElementById('botao2').addEventListener('click', function() {
+                adicionarAnexo('botao2');
+            });
+            document.getElementById('botao3').addEventListener('click', function() {
+                adicionarAnexo('botao3');
+            });
+            document.getElementById('botao4').addEventListener('click', function() {
+                adicionarAnexo('botao4');
             });
 
-            input.click();
-        }
-
-        document.getElementById('botao1').addEventListener('click', function() {
-            adicionarAnexo('botao1');
-        });
-        document.getElementById('botao2').addEventListener('click', function() {
-            adicionarAnexo('botao2');
-        });
-        document.getElementById('botao3').addEventListener('click', function() {
-            adicionarAnexo('botao3');
-        });
-        document.getElementById('botao4').addEventListener('click', function() {
-            adicionarAnexo('botao4');
-        });
+            function enviarArquivosParaBackend() {
+                addNewNote(arquivosSelecionados);
+                arquivosSelecionados = [];
+            }
         </script>
         
         <a href="">
-            <button id="adicionar">Adicionar</button>
+            <button id="adicionar" onclick="enviarArquivosParaBackend()">Adicionar</button>
         </a>
 
     </main>
 
-
 </body>
-
 </html>

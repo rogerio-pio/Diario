@@ -64,7 +64,7 @@
     text-align: start;
     gap: 10px;
 }
-#areadetexto {
+.areadetexto {
     padding: 10px;
     resize: none;
     border-radius: 10px;

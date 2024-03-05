@@ -1,29 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    var query = location.search.slice(1);
-    var partes = query.split('&');
-    var data = {};
-    partes.forEach(function (parte) {
-        var chaveValor = parte.split('=');
-        var chave = chaveValor[0];
-        var valor = chaveValor[1];
-        data[chave] = valor;
-    });
-    console.log(data); 
-    var title = document.querySelector('#title')
-    console.log(title);
-    const meses = ["Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro"]
-    title.textContent = `${data.day} de ${meses[data.month - 1]}`
-    
-      
+    const title = document.getElementById('title');
+    title.textContent = localStorage.getItem('data');  
 })
+function proximaPagina2(){
+    if(document.getElementById('res2').value.trim() && document.getElementById('res3').value.trim()){
+        localStorage.setItem('res2', document.getElementById('res2').value.trim());
+        localStorage.setItem('res3', document.getElementById('res3').value.trim());
+        window.location.href = 'diario_pagina4.html';
+    }else{
+        alert("Por favor, preencha os campos abaixo.")
+    }
+}

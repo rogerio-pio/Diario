@@ -10,7 +10,7 @@ class ImagesController {
     async new(req, res){
         try{
             const authHeader = req.headers['authorization'];
-            const code = authHeader && authHeader.split(" ")[1];
+            const code = authHeader;
             if(!token) return res.status(401).json({msg: 'Faça login para acessar!'});
             if(!token.check(code)) return res.status(401).json({msg: 'Login Inválido!'});
             const id = token.decode(code);
@@ -41,7 +41,7 @@ class ImagesController {
         try{
             const images = req.body;
             const authHeader = req.headers['authorization'];
-            const code = authHeader && authHeader.split(" ")[1];
+            const code = authHeader;
             if(!token) return res.status(401).json({msg: 'Faça login para acessar!'});
             if(!token.check(code)) return res.status(401).json({msg: 'Login Inválido!'});
             let userID = token.decode(code);
@@ -83,7 +83,7 @@ class ImagesController {
         try{
             const images = req.body;
             const authHeader = req.headers['authorization'];
-            const code = authHeader && authHeader.split(" ")[1];
+            const code = authHeader;
             if(!token) return res.status(401).json({ msg: 'Faça login para acessar!' });
             if(!token.check(code)) return res.status(401).json({ msg: 'Login Inválido!' });
             let userID = token.decode(code);
@@ -106,7 +106,7 @@ class ImagesController {
             const images = req.body;
 
             const authHeader = req.headers['authorization'];
-            const code = authHeader && authHeader.split(" ")[1];
+            const code = authHeader;
             if(!token) return res.status(401).json({msg: 'Faça login para acessar!'});
             if(!token.check(code)) return res.status(401).json({msg: 'Login Inválido!'});
             let userID = token.decode(code);
