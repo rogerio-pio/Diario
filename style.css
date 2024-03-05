@@ -15,7 +15,6 @@
   height: 834px;
   border-radius: 30px;
   background: #FEC74F4D;
-  ;
   margin-top: 48px;
   margin-bottom: 48px;
   box-shadow: 0px 4px 4px 0px #00000040;
@@ -32,10 +31,8 @@
   justify-content: center;
 }
 .img__De__Boas__Vindas{
-  width: 400px;
-  height: 264px;
-  border-radius: 30px;
-  margin-top: 60px;
+  width: 1100px;
+  height: 396.64px;
 
 }
 
@@ -43,7 +40,6 @@
 
   margin-left: 32px;
   margin-right: 32px;
-  margin-top: 60px;
 }
 
 .conteudo__De__BoasVindas h1{
@@ -158,4 +154,65 @@ height: 20px;
 border-radius: 20px;
 background: #FEC74FC9;
 
+}
+.publicacao{
+  display: flex;
+
+}
+.barra__de__divisao{
+  width: 0px;
+  border: 1px solid #0000004D
+
+
+
+}
+.center__diario{
+  width: 1360px;
+  height: 962px;
+  border-radius:20px;
+  background: #FEC74F99;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.textarea__diario{
+  width: 1280px;
+  height: 250px;
+  border-radius: 20px;
+  margin-bottom: 32px;
+
+}
+.img__Diario{
+  width: 887px;
+height: 369px;
+
+}
+.conteudo__Diario{
+  margin-left: 32px;
+  margin-right: 32px;
+}
+.conteudo__Diario h2{
+  font-family: Open Sans;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+.mudar__de__pagina__diario{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-family: Open Sans;
+  font-size: 30px;
+  text-align: center;
+  width: 532px;
+  height: 35px;
+  border-radius: 20px;
+  background: #F36950;
+  border: none;
+
+}
+.button__diario{
+  display:flex;
+  justify-content: center;
 }
