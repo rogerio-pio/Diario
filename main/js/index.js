@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var formData = {
             email: document.getElementById('email').value,
-            password: document.getElementById('senha').value
+            password: document.getElementById('senha').value,
         };
         fetch('http://localhost:8080/signin', {
             method: 'POST',

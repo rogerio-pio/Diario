@@ -38,17 +38,23 @@ class userControllers{
     async edit(req, res){
         try{
             let user = req.body
-            const authHeader = req.headers['authorization'];
-            const code = authHeader && authHeader.split(" ")[1];
-            if(!token) return res.status(401).json({msg: 'Faça login para acessar!'});
-            if(!token.check(code)) return res.status(401).json({msg: 'Login Inválido!'});
-            const id = token.decode(code);
-            const hash = await encrypt.encrypt(user.password);
-            user.password = hash;
-            database.edit('users', 'username', user.username, 'id', id.foo);
-            database.edit('users', 'email', user.email, 'id', id.foo);
-            database.edit('users', 'password', user.password, 'id', id.foo);
-            return res.status(200).json({msg: "atualizado com sucesso!"});
+
+            const dbUser = await database.get('users', 'email', user.email);
+            if(dbUser && dbUser.username == user.username){
+                const hash = await encrypt.encrypt(user.password);
+                user.password = hash;
+                database.edit('users', 'password', user.password, 'id', dbUser.id);
+                return res.status(200).json({msg: "Senha alterada com sucesso"});
+            }else{
+                return res.status(500).json({msg: "Erro interno do servidor!"});
+            }
+
+            //const hash = await encrypt.encrypt(user.password);
+            //user.password = hash;
+            //database.edit('users', 'username', user.username, 'id', id.foo);
+            //database.edit('users', 'email', user.email, 'id', id.foo);
+            //database.edit('users', 'password', user.password, 'id', id.foo);
+            //return res.status(200).json({msg: "atualizado com sucesso!"});
         }catch(err){
             console.log(err);
             return res.status(500).json({msg: "erro interno do servidor!"});

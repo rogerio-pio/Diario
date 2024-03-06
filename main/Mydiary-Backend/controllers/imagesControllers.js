@@ -26,12 +26,14 @@ class ImagesController {
                     console.log(err);
                     return res.status(500).json({msg: 'Erro interno do servidor!' });
                 }
+                
                 req.files.forEach(file => {
-                    imgPack.img.push(`${file.filename}`);
+                    imgPack.img.push(file.filename);
                 });
                 database.addImages(imgPack);
             });
         }catch(err){
+            console.log(3)
             console.log(err);
             return res.status(500).json({msg: 'Erro interno do servidor!' });
         }
