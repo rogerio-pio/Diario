@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diario página 6</title>
-    <script src="js/addNote.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="css/diario_pagina6.css">
 </head>
 
@@ -26,54 +26,64 @@
     <main>
         <h2>Aqui é um cantinho para você guardar de recordação se assim desejar<br>
             Você poderá adicionar as fotos e os vídeos que quiser.</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+            <input type="file" name="file" id="fileInput" style="display: none;" multiple>
+        </form>
 
-        <button id="botao1" class="botaoAnexo">Adicionar Anexo 1</button>
-        <button id="botao2" class="botaoAnexo">Adicionar Anexo 2</button>
-        <button id="botao3" class="botaoAnexo">Adicionar Anexo 3</button>
-        <button id="botao4" class="botaoAnexo">Adicionar Anexo 4</button>
+        <button id="botao1" class="botaoAnexo" onclick="adicionarAnexo(1)">Adicionar Anexo 1</button>
+        <button id="botao2" class="botaoAnexo" onclick="adicionarAnexo(2)">Adicionar Anexo 2</button>
+        <button id="botao3" class="botaoAnexo" onclick="adicionarAnexo(3)">Adicionar Anexo 3</button>
+        <button id="botao4" class="botaoAnexo" onclick="adicionarAnexo(4)">Adicionar Anexo 4</button>
 
         <div id="anexosSelecionados"></div>
 
         <script>
-            var arquivosSelecionados = []; // Lista para armazenar arquivos selecionados
-
+            var arquivosSelecionados = [];
             function adicionarAnexo(botaoId) {
-                var input = document.createElement('input');
-                input.type = 'file';
+                var input = document.getElementById('fileInput');
 
                 input.addEventListener('change', function() {
                     var divAnexos = document.getElementById('anexosSelecionados');
-                    var arquivo = this.files[0];
+                    var arquivo = this.files[botaoId-1];
                     var nomeArquivo = arquivo.name;
                     var tamanhoArquivo = arquivo.size;
                     divAnexos.innerHTML += '<p>Nome do arquivo: ' + nomeArquivo + ', Tamanho: ' + tamanhoArquivo + ' bytes</p>';
-
-                    arquivosSelecionados.push(arquivo); // Adiciona o arquivo à lista de arquivos selecionados
+                    arquivosSelecionados.push(arquivo);
                 });
 
                 input.click();
             }
 
-            document.getElementById('botao1').addEventListener('click', function() {
-                adicionarAnexo('botao1');
-            });
-            document.getElementById('botao2').addEventListener('click', function() {
-                adicionarAnexo('botao2');
-            });
-            document.getElementById('botao3').addEventListener('click', function() {
-                adicionarAnexo('botao3');
-            });
-            document.getElementById('botao4').addEventListener('click', function() {
-                adicionarAnexo('botao4');
-            });
-
             function enviarArquivosParaBackend() {
-                enviarArquivos(arquivosSelecionados);
-                arquivosSelecionados = [];
+                event.preventDefault();
+                if(arquivosSelecionados.length != 0){
+                    var formData = new FormData();
+                    arquivosSelecionados.forEach(function(arquivo) {
+                        formData.append('file', arquivo);
+                    });
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'http://localhost:8080/newImgs', true);
+                    xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+                    xhr.onload = function() {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            alert('Arquivo enviado com sucesso');
+                        } else {
+                            console.error('Erro ao enviar o arquivo');
+                        }
+                    };
+                    xhr.onerror = function() {
+                        console.error('Erro de rede');
+                    };
+                    xhr.send(formData);
+                    window.location.href = 'diario_pagina10.html';
+                }else{
+                    window.location.href = 'diario_pagina10.html';
+                }
             }
+                
         </script>
         
-        <a href="">
+        <a href="#">
             <button id="adicionar" onclick="enviarArquivosParaBackend()">Adicionar</button>
         </a>
 

@@ -1,34 +1,31 @@
-async function enviarArquivos(files) {
-    try {
-        const formData = new FormData();
+function enviarArquivosParaBackend() {
+    // Cria uma instância do objeto FormData
+    var formData = new FormData();
 
-                formData.append('id', 1);
+    // Adiciona os arquivos selecionados ao objeto FormData
+    arquivosSelecionados.forEach(function(arquivo) {
+        formData.append('file', arquivo);
+    });
 
-             files.forEach(file => {
-            formData.append('file', file);
-        });
-
-        const token = localStorage.getItem('token');
-        const headers = {
-            'Authorization': token
-        };
-
-        const options = {
-            method: 'POST',
-            headers: headers,
-            body: formData
-        };
-
-        const response = await fetch('http://localhost:8080/newImgs', options);
-
-        if (!response.ok) {
-            throw new Error('Erro ao enviar solicitação');
+    // Faz a requisição para o backend usando fetch API
+    fetch('/upload', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Authorization': localStorage.getItem('token')
         }
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Arquivos enviados com sucesso!');
+        } else {
+            console.error('Erro ao enviar arquivos.');
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao enviar arquivos:', error);
+    });
 
-        const data = await response.json();
-        console.log('Resposta do servidor:', data);
-    } catch (error) {
-        console.error('Erro:', error);
-    }
+    // Limpa a lista de arquivos selecionados
+    arquivosSelecionados = [];
 }
-

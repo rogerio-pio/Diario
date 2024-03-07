@@ -13,9 +13,9 @@ function proximaPagina(){
 }
 function proximaPagina3(){
     if(document.getElementById('res4').value.trim() && document.getElementById('res5').value.trim() && document.getElementById('res6').value.trim()){
-        localStorage.setItem('res2', document.getElementById('res4').value.trim());
-        localStorage.setItem('res3', document.getElementById('res5').value.trim());
-        localStorage.setItem('res3', document.getElementById('res6').value.trim());
+        localStorage.setItem('res4', document.getElementById('res4').value.trim());
+        localStorage.setItem('res5', document.getElementById('res5').value.trim());
+        localStorage.setItem('res6', document.getElementById('res6').value.trim());
         window.location.href = 'diario_pagina6.html';
     }else{
         alert("Por favor, preencha os campos abaixo.")
@@ -113,6 +113,42 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .catch(error => console.error('Erro ao obter dados do backend:', error));
 });
+
+function test(){
+    const data = {
+        res1: localStorage.getItem('res1'),
+        res2: localStorage.getItem('res2'),
+        res3: localStorage.getItem('res3'),
+        res4: localStorage.getItem('res4'),
+        res5: localStorage.getItem('res5'),
+        res6: localStorage.getItem('res6'),
+        res7: 'null',
+        res8: 'null'
+    }
+    fetch('http://localhost:8080/newNote', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem('token')
+        },
+        body: JSON.stringify(data)
+    })
+    .then(function(response) {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error('Erro ao enviar requisição para o servidor.');
+    })
+    .then(function(data) {
+        alert("Nota adicionada com sucesso");
+        window.location.href = "pagina8.html";
+        console.log('Resposta do servidor:', data);
+    })
+    .catch(function(error) {
+        alert("Erro ao cadastrar nota")
+        console.error('Erro:', error);
+    });
+}
 
 
 

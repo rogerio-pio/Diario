@@ -7,37 +7,43 @@ const path = require('path');
 const fs = require('fs');
 
 class ImagesController {
-    async new(req, res){
-        try{
+    async new(req, res) {
+        try {
             const authHeader = req.headers['authorization'];
             const code = authHeader;
-            if(!token) return res.status(401).json({msg: 'Faça login para acessar!'});
-            if(!token.check(code)) return res.status(401).json({msg: 'Login Inválido!'});
+            if (!token) return res.status(401).json({ msg: 'Faça login para acessar!' });
+            if (!token.check(code)) return res.status(401).json({ msg: 'Login Inválido!' });
             const id = token.decode(code);
-            upload.array('file')(req, res, function(err){
-                let imgPack = {
-                    noteID: req.body.id,
-                    img: []
-                };
-                if(err instanceof multer.MulterError){
-                    console.log(err);
-                    return res.status(500).json({msg: "Erro no upload de imagem!"});
-                }else if (err){
-                    console.log(err);
-                    return res.status(500).json({msg: 'Erro interno do servidor!' });
-                }
-                
-                req.files.forEach(file => {
-                    imgPack.img.push(file.filename);
+            const uploadFiles = async () => {
+                return new Promise((resolve, reject) => {
+                    upload.array('file')(req, res, function (err) {
+                        if (err instanceof multer.MulterError) {
+                            console.log(err);
+                            reject("Erro no upload de imagem!");
+                        } else if (err) {
+                            console.log(err);
+                            reject("Erro interno do servidor!");
+                        } else {
+                            let imgPack = {
+                                noteID: id.foo,
+                                img: []
+                            };
+                            req.files.forEach(file => {
+                                imgPack.img.push(file.filename);
+                            });
+                            resolve(imgPack);
+                        }
+                    });
                 });
-                database.addImages(imgPack);
-            });
-        }catch(err){
-            console.log(3)
+            };
+            const imgPack = await uploadFiles();
+            await database.addImages(imgPack);
+    
+            return res.status(200).json({ msg: "Imagens enviadas com sucesso!" });
+        } catch (err) {
             console.log(err);
-            return res.status(500).json({msg: 'Erro interno do servidor!' });
+            return res.status(500).json({ msg: 'Erro interno do servidor!' });
         }
-        return res.status(200).json({ msg: "Imagens enviadas com sucesso!" });
     }
     async edit(req, res){
         try{

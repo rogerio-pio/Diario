@@ -5,8 +5,13 @@ const userController = require('./controllers/userControllers');
 const notesController = require('./controllers/notesControllers');
 const imagesController = require('./controllers/imagesControllers');
 const path = require('path');
+const corsOptions = {
+    origin: 'http://127.0.0.1:5500',
+    methods: 'GET,POST',
+    allowedHeaders: 'Content-Type,Authorization',
+  };
 
-router.use(cors());
+router.use(cors(corsOptions));
 
 ///Rota dinâmica de imagem: localhost:8080/uploads/[titulo da imagem].[extensão - ex: pgn, jpg, jpeg]
 router.use('/uploads', express.static(path.join(__dirname, 'uploads')));
