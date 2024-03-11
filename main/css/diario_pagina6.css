@@ -38,6 +38,16 @@ nav ul li img{
     height: 18px;
 }
 
+#dataAtual {
+    position: absolute;
+    top: 48px; 
+    left: 65px;
+    font-size: 42px;
+    font-weight:500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: Carattere;
+}
+
 main{
     position: relative;
     width: 95vw;
