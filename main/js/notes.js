@@ -6,7 +6,7 @@ function formatDate(date) {
 function proximaPagina(){
     if(document.getElementById('res1').value.trim()){
         localStorage.setItem('res1', document.getElementById('res1').value.trim());
-        window.location.href = 'diario_pagina9.html';
+        window.location.href = 'pagina06.html';
     }else{
         alert("Por favor, preencha o campo abaixo.")
     }
@@ -16,7 +16,7 @@ function proximaPagina3(){
         localStorage.setItem('res4', document.getElementById('res4').value.trim());
         localStorage.setItem('res5', document.getElementById('res5').value.trim());
         localStorage.setItem('res6', document.getElementById('res6').value.trim());
-        window.location.href = 'diario_pagina6.html';
+        window.location.href = 'pagina08.html';
     }else{
         alert("Por favor, preencha os campos abaixo.")
     }
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 noteElement.appendChild(resumeElement);
 
                 noteElement.addEventListener('click', function() {
-                    window.location.href = 'diariopag2.html';
+                    window.location.href = 'pagina05.html';
                 });
 
                 notesContainer.appendChild(noteElement);
@@ -141,7 +141,7 @@ function test(){
     })
     .then(function(data) {
         alert("Nota adicionada com sucesso");
-        window.location.href = "pagina8.html";
+        window.location.href = "pagina04.html";
         console.log('Resposta do servidor:', data);
     })
     .catch(function(error) {

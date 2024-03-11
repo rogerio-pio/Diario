@@ -2,7 +2,7 @@
     padding: 0px;
     margin: 0px;
     border: 0px;
-    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #header {
     background-color: #FEC74FB2;
@@ -73,9 +73,18 @@
 }
 
 #botao {
-    display: flex;
+    position: absolute;
+    top: 70%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
     background-color: #F36950;
-    padding: 10px;
-    border-radius: 100%;
+}
+
+#botao img {
+    max-width: 100%;
+    margin: 10px 0 0 20px;
 }
 

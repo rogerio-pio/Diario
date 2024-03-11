@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(function(data) {
                 var msg = JSON.stringify(data.msg);
                 alert(msg.substring(1, msg.length - 1));
-                window.location.href = "diario_pagina02.html"
+                window.location.href = "pagina02.html"
             })
             .catch(function(error) {
                 console.error('Erro:', error);

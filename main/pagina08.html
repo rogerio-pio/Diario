@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diario página 6</title>
-    
-    <link rel="stylesheet" type="text/css" href="css/diario_pagina6.css">
+    <script src="js/data.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/pagina08.css">
 </head>
 
 <body>
@@ -21,6 +21,7 @@
     
     <div id="data">
         <img src="imgs/Rectangle 13.png" alt="data">
+        <div id="dataAtual"></div>
     </div>
 
     <main>
@@ -75,9 +76,9 @@
                         console.error('Erro de rede');
                     };
                     xhr.send(formData);
-                    window.location.href = 'diario_pagina10.html';
+                    window.location.href = 'pagina09.html';
                 }else{
-                    window.location.href = 'diario_pagina10.html';
+                    window.location.href = 'pagina09.html';
                 }
             }
                 

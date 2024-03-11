@@ -48,13 +48,6 @@ class userControllers{
             }else{
                 return res.status(500).json({msg: "Erro interno do servidor!"});
             }
-
-            //const hash = await encrypt.encrypt(user.password);
-            //user.password = hash;
-            //database.edit('users', 'username', user.username, 'id', id.foo);
-            //database.edit('users', 'email', user.email, 'id', id.foo);
-            //database.edit('users', 'password', user.password, 'id', id.foo);
-            //return res.status(200).json({msg: "atualizado com sucesso!"});
         }catch(err){
             console.log(err);
             return res.status(500).json({msg: "erro interno do servidor!"});
@@ -64,7 +57,7 @@ class userControllers{
         try{
             let user = req.body;
             const authHeader = req.headers['authorization'];
-            const code = authHeader && authHeader.split(" ")[1];
+            const code = authHeader;
             if(!code) return res.status(401).json({msg: 'Faça login para acessar!'});
             if(!token.check(code)) return res.status(401).json({msg: 'Login Inválido!'});
             const id = token.decode(code);

@@ -38,6 +38,16 @@ nav ul li img{
     height: 18px;
 }
 
+#dataAtual {
+    position: absolute;
+    top: 48px; 
+    left: 65px;
+    font-size: 42px;
+    font-weight:500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: Carattere;
+}
+
 main{
     position: relative;
     width: 95vw;
@@ -48,7 +58,7 @@ main{
 }
 
 main img{
-    margin: 3% 0 0 28%;
+    margin: 3% 0 0 16%;
 }
 
 #divaux {
@@ -80,7 +90,7 @@ main img{
     outline: none;
 }
 
-.areadetexto {
+#areadetexto {
     padding: 10px;
     resize: none;
     border-radius: 10px;
@@ -96,6 +106,6 @@ button{
     margin: 30px 33%;
     width: 440px;
     height: 28px;
-    border-radius: 15px;
+    border-radius: 20px;
     border-style: none;
 }

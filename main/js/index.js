@@ -1,8 +1,8 @@
 function proximaPagina(){
-    window.location.href = '../diario_pagina02.html';
+    window.location.href = '../pagina02.html';
 }
 function diario(){
-    window.location.href = '../pagina8.html';
+    window.location.href = '../pagina04.html';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(function(data) {
             alert("Login bem sucedido")
             localStorage.setItem('token', data.token);
-            window.location.href = '../bemVindo.html';
+            window.location.href = '../pagina03.html';
         })
         .catch(function(error) {
             console.error('Erro:', error);

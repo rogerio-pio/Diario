@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(function(data) {
             alert("Cadastro bem-sucedido");
-            window.location.href = "bemVindo.html";
+            window.location.href = "pagina03.html";
             console.log('Resposta do servidor:', data);
         })
         .catch(function(error) {
