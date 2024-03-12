@@ -1,7 +1,8 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans';
+    font-weight: 500;
 }
 
 header{
@@ -51,7 +52,7 @@ nav ul li img{
 main{
     position: relative;
     width: 95vw;
-    height: 240vh;
+    
     background-color: #FADB8E;
     margin: 28px 0px 28px 28px;
     border-radius: 15px;
@@ -72,7 +73,7 @@ main img{
 .texto{
     margin: 30px;
     font-size: 1.5em;
-    font-weight:bold;
+    font-weight:500;
 }
 
 .input{
@@ -89,13 +90,16 @@ main img{
 .input:focus {
     outline: none;
 }
-
-#areadetexto {
+.text {
+    font-weight: 400;
+}
+.areadetexto {
+    font-size: 24px;
     padding: 10px;
     resize: none;
     border-radius: 10px;
-    
-    
+    height: 100px;
+   
 }
 
 button{
