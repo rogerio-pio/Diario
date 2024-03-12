@@ -1,7 +1,8 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans';
+    font-weight: 500;
 }
 
 header{
@@ -72,7 +73,7 @@ main img{
 .texto{
     margin: 30px;
     font-size: 1.5em;
-    font-weight:bold;
+    font-weight:500;
 }
 
 .input{
@@ -99,8 +100,6 @@ main img{
     border-radius: 10px;
     height: 100px;
    
-    
-    
 }
 
 button{
