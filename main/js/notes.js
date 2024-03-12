@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             data.res.forEach(item => {
                 const noteElement = document.createElement('div');
-
+                
                 const creationDate = new Date(Date.parse(item.creation_date));
                 const creationYear = creationDate.getFullYear();
                 const creationMonth = creationDate.getMonth();
@@ -62,9 +62,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 }else{
                     noteElement.classList.add('notes');
                 }
+                let date = item.creation_date.slice(0, 10);
 
+                noteElement.dataset.data = date;
                 noteElement.dataset.backendId = item.id;
-                
+
                 const dateElement = document.createElement('p');
                 dateElement.textContent = formattedDate;
                 dateElement.id = 'data';
@@ -79,6 +81,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 noteElement.appendChild(dateElement);
                 noteElement.appendChild(divisor);
                 noteElement.appendChild(resumeElement);
+
+                noteElement.addEventListener('click', function() {
+                    localStorage.setItem('noteDate', date); // Testar se funciona, caso contrário, usar algo para pegar o valor que está no campo dataset.data
+                    window.location.href = 'pagina14.html';
+                });
 
                 notesContainer.appendChild(noteElement);
             });
@@ -99,10 +106,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 resumeElement.textContent = "Adicionar novo dia no seu diário";
                 resumeElement.id = 'addnewnote';
 
+                let month = currentDate.getMonth()+1;
+                const date = currentDate.getFullYear() + '-' + month + '-' + currentDate.getDate();
+                noteElement.dataset.data = date;
+
                 noteElement.appendChild(dateElement);
                 noteElement.appendChild(divisor);
                 noteElement.appendChild(resumeElement);
-
                 noteElement.addEventListener('click', function() {
                     window.location.href = 'pagina05.html';
                 });
@@ -121,9 +131,7 @@ function test(){
         res3: localStorage.getItem('res3'),
         res4: localStorage.getItem('res4'),
         res5: localStorage.getItem('res5'),
-        res6: localStorage.getItem('res6'),
-        res7: 'null',
-        res8: 'null'
+        res6: localStorage.getItem('res6')
     }
     fetch('http://localhost:8080/newNote', {
         method: 'POST',

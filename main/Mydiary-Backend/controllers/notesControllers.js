@@ -57,6 +57,7 @@ class notesControllers{
             const id = token.decode(code);
             notes.userID = id.foo;
             const result = await database.getMulti('notes', 'userID', notes.userID);
+
             if(result) return res.status(200).json({res: result});
             return res.status(404).json({msg: "não encontrado!"});
 

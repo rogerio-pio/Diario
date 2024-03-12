@@ -96,9 +96,9 @@ class ImagesController {
             if(!token.check(code)) return res.status(401).json({ msg: 'Login Inválido!' });
             let userID = token.decode(code);
             userID = userID.foo;
-    
-            const result = await database.get('images', 'noteID', images.id);
-            const check = await database.get('notes', 'id', images.id);
+  
+            const result = await database.getImage('images', 'noteID', userID, images.creation_date);
+            const check = await database.get('notes', 'userID', userID);
             if(check.userID != userID) return res.status(401).json({ msg: 'Nota indisponível!' });
     
 

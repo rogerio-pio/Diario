@@ -20,8 +20,6 @@ class databaseServices{
                 response4 TEXT,
                 response5 TEXT,
                 response6 TEXT,
-                response7 TEXT,
-                response8 TEXT,
                 creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );`
         const query3 = `
@@ -62,9 +60,9 @@ class databaseServices{
     }
     async addNotes(notes){
         try{
-            const query = 'INSERT INTO notes (userID, response1, response2, response3, response4, response5, response6, response7, response8) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+            const query = 'INSERT INTO notes (userID, response1, response2, response3, response4, response5, response6) VALUES (?, ?, ?, ?, ?, ?, ?)';
             const result = await new Promise((resolve, reject)=>{
-                this.con.query(query, [notes.userID, notes.res1, notes.res2, notes.res3, notes.res4, notes.res5, notes.res6, notes.res7, notes.res8], (err, result) => {
+                this.con.query(query, [notes.userID, notes.res1, notes.res2, notes.res3, notes.res4, notes.res5, notes.res6], (err, result) => {
                     if(err) reject(err);
                     else resolve(result);
                 });
@@ -115,6 +113,21 @@ class databaseServices{
         try{
             const result = await new Promise((resolve, reject)=>{
                 this.con.query(query, [table, field, key], (err, rows) => {
+                    if (err) reject(err);
+                    else resolve(rows);
+                });
+            })
+            return result[0];
+        }catch(err){
+            console.log(err);
+            return false;
+        }
+    }
+    async getImage(table, field, key, key2){
+        const query = 'SELECT * FROM ?? WHERE ?? = ? AND SUBSTRING(creation_date, 1, 10) = ?';
+        try{
+            const result = await new Promise((resolve, reject)=>{
+                this.con.query(query, [table, field, key, key2], (err, rows) => {
                     if (err) reject(err);
                     else resolve(rows);
                 });
