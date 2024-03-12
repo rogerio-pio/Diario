@@ -89,11 +89,16 @@ main img{
 .input:focus {
     outline: none;
 }
-
-#areadetexto {
+.text {
+    font-weight: 400;
+}
+.areadetexto {
+    font-size: 24px;
     padding: 10px;
     resize: none;
     border-radius: 10px;
+    height: 100px;
+   
     
     
 }

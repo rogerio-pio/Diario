@@ -64,12 +64,17 @@ nav ul li img{
     margin: 30px;
     text-align: start;
     gap: 10px;
+    height: 400px;
+    
+}
+.text {
+    font-weight: 400;
 }
 .areadetexto {
-    padding: 10px;
+    padding: 12px;
     resize: none;
     border-radius: 10px;
-    
+    font-size: 24px;
     
 }
 
