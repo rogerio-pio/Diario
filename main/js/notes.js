@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 noteElement.appendChild(resumeElement);
 
                 noteElement.addEventListener('click', function() {
-                    localStorage.setItem('noteDate', date); // Testar se funciona, caso contrário, usar algo para pegar o valor que está no campo dataset.data
+                    localStorage.setItem('noteDate', date);
                     window.location.href = 'pagina14.html';
                 });
 
@@ -117,14 +117,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     window.location.href = 'pagina05.html';
                 });
 
-                notesContainer.appendChild(noteElement);
+                notesContainer.prepend(noteElement)
             }
         }
     })
     .catch(error => console.error('Erro ao obter dados do backend:', error));
 });
 
-function test(){
+
+function newNote(){
     const data = {
         res1: localStorage.getItem('res1'),
         res2: localStorage.getItem('res2'),
