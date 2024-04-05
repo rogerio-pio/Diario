@@ -1,0 +1,158 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans';
+    font-weight: 500;
+}
+
+body{
+    width: 100%;
+    height: 120vh;
+    background-color: #F5F8EC;
+}
+
+#text{
+    width: 40vw;
+    height: 55vh;
+    padding: 50px 130px;
+    font-size: 0.9em;
+}
+
+.rectangle {
+    min-width: 110px; /* Define uma largura mínima para a rectangle */
+    padding: 0 15px; /* Adiciona algum espaço interno para a rectangle */
+    height: 20px;
+    background-color: #fbd67e;
+    border-radius: 10px;
+    z-index: 1;
+    margin-top: 4vh;
+    display: inline-block; /* Altera o display para inline-block */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    line-height: 20px; /* Centraliza o texto verticalmente */
+    margin-right: auto;
+    margin-left: 4.6vw;
+}  
+
+.rectangle p{
+    font-family: 'Carattere', sans-serif;
+    font-size: 88px;
+    z-index: 2;
+    margin-top: -4px;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.box {
+    width: calc(90vw - 40px);
+    padding: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    background-color: #fbd67e;
+    margin-top: 5vh;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-tab {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 10px solid #fbd67e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+  
+.user-tab img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    border: 2px solid #fbd67e;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.label-text {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+  
+
+input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F36950;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff8671;
+}
+
+.space {
+    margin-bottom: 23vh;
+}
+
+@media screen and (max-width: 768px) {
+    .user-tab {
+        width: 12em;
+        height: 12em;
+    }
+    .rectangle{
+        margin-bottom: 3em;
+    }
+
+    .box {
+        width: calc(90vw - 40px);
+    }
+
+    .label-text {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .box {
+        width: calc(100vw - 6em); /* Reduza a largura para evitar que ultrapasse a tela */
+        max-width: 100%; /* Gaªrante que o box não ultrapasse a largura da tela */
+        margin-right: 1em;
+    }
+    .label-text {
+        font-size: 1em; /* Redefina o tamanho da fonte para o tamanho padrão */
+    }
+    input {
+        width: calc(100% - 16px); /* Reduza o tamanho da entrada para compensar a margem */
+    }
+    
+    .rectangle p {
+        font-size: 82px;
+    }
+    .container {
+        padding: 10px;
+    }
+}

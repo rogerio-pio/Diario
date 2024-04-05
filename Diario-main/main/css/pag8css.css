@@ -1,0 +1,181 @@
+
+
+* {
+    padding: 0%;
+    margin: 0%;
+    background-color: #F5F8EC;
+    display: flexbox;
+}
+
+
+.header{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: rgba(254, 199, 79, 0.7);
+    height: 50px;
+    margin-bottom: 120px;
+
+}
+
+.header button{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.leftbutton{
+    font-size: 1px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    padding-bottom: 22px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    background-image: url('/pag 8/images/notesbutton.png');
+    background-size: cover;
+    color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+.rightbutton{
+    font-size: 1px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    padding-bottom: 22px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    background-image: url('/pag 8/images/profilebutton.png');
+    background-size: cover;
+    color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+
+#pagtitle h1{
+    z-index: 2;
+    position: absolute;
+    background-color: rgba(254, 199, 79, 0);
+    width: 169px;
+    height: 115px;
+    left: 29px;
+    top: 50px;
+
+    font-family: 'Carattere';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 115px;
+
+    color: #000000;
+
+
+}
+
+#pagtitle #background{
+    z-index: 1;
+    position: absolute;
+    top: 105px;
+    left: 20px;
+    width: 220px;
+    height: 20px;
+
+    background-color: rgba(254, 199, 79, 0.79);
+    display: inline-block;
+    border-radius: 20px;
+}
+
+
+.newnote{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    width: 1800px;
+    height: 85px;
+    padding: 10px 10px;
+    background-color: rgba(254, 199, 79, 0.79);
+    border: 0px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.newnote p{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0px;
+    border: 0px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    color: #000000;
+    background-color: rgba(254, 199, 79, 0.079);
+}
+
+.newnote #slash {
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border: 0px;
+    width: 70px;
+    height: 0px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transform: rotate(90deg);
+}
+
+.notes{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    width: 1800px;
+    height: 85px;
+    padding: 10px 10px;
+    background-color: rgba(254, 199, 79, 0.3);
+    border: 0px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.notes p{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0px;
+    border: 0px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    color: #000000;
+    background-color: rgba(254, 199, 79, 0.03);
+}
+
+.notes #slash {
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border: 0px;
+    width: 70px;
+    height: 0px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transform: rotate(90deg);
+}
+
+
