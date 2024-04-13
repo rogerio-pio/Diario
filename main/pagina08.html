@@ -40,48 +40,59 @@
 
         <script>
             var arquivosSelecionados = [];
-            function adicionarAnexo(botaoId) {
-                var input = document.getElementById('fileInput');
 
-                input.addEventListener('change', function() {
-                    var divAnexos = document.getElementById('anexosSelecionados');
-                    var arquivo = this.files[botaoId-1];
+            document.getElementById('fileInput').addEventListener('change', function () {
+                var input = this;
+                var divAnexos = document.getElementById('anexosSelecionados');
+
+                if (arquivosSelecionados.length < 4) {
+                    var arquivo = input.files[0];
                     var nomeArquivo = arquivo.name;
                     var tamanhoArquivo = arquivo.size;
-                    divAnexos.innerHTML += '<p>Nome do arquivo: ' + nomeArquivo + ', Tamanho: ' + tamanhoArquivo + ' bytes</p>';
-                    arquivosSelecionados.push(arquivo);
-                });
+                    divAnexos.innerHTML += '<p>Nome do arquivo: ' + nomeArquivo + ', Tamanho: ' + tamanhoArquivo + '$                    arquivosSelecionados.push(arquivo);
+                } else {
+                    alert("Você já adicionou o número máximo de anexos (4).");
+                }
+                input.value = null;
+            });
 
+            function adicionarAnexo(botaoId) {
+                var input = document.getElementById('fileInput');
                 input.click();
             }
 
-            function enviarArquivosParaBackend() {
+            async function enviarArquivosParaBackend() {
                 event.preventDefault();
-                if(arquivosSelecionados.length != 0){
-                    var formData = new FormData();
-                    arquivosSelecionados.forEach(function(arquivo) {
+                if (arquivosSelecionados.length !== 0) {
+                    const formData = new FormData();
+                    arquivosSelecionados.forEach(function (arquivo) {
                         formData.append('file', arquivo);
                     });
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'http://localhost:8080/newImgs', true);
-                    xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-                    xhr.onload = function() {
-                        if (xhr.status >= 200 && xhr.status < 300) {
+
+                    try {
+                        const response = await fetch('http://srv493893.hstgr.cloud:8080/newImgs', {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': localStorage.getItem('token')
+                            },
+                            body: formData
+                        });
+
+                        if (response.ok) {
                             alert('Arquivo enviado com sucesso');
+                            window.location.href = 'pagina09.html';
                         } else {
-                            console.error('Erro ao enviar o arquivo');
+                            alert('Erro ao enviar o arquivo');
                         }
-                    };
-                    xhr.onerror = function() {
-                        console.error('Erro de rede');
-                    };
-                    xhr.send(formData);
-                    window.location.href = 'pagina09.html';
-                }else{
+                    } catch (error) {
+                        alert('Erro de rede');
+                        console.error('Erro:', error);
+                    }
+                } else {
                     window.location.href = 'pagina09.html';
                 }
             }
-                
+
         </script>
         
         <a href="#">
