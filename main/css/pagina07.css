@@ -18,7 +18,8 @@ ul{
 
 nav ul{
     display: flex;
-    margin-left: 88%;
+    justify-content: flex-end;
+
 }
 
 nav ul li{
@@ -50,16 +51,22 @@ nav ul li img{
 }
 
 main{
-    position: relative;
-    width: 95vw;
-    
+    display: flex;
+    justify-content: center;
+}
+
+.divContent{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    align-content: center;
     background-color: #FADB8E;
-    margin: 28px 0px 28px 28px;
     border-radius: 15px;
+    align-items: center;
 }
 
 main img{
-    margin: 3% 0 0 16%;
+width: 80%;
 }
 
 #divaux {
@@ -107,9 +114,98 @@ button{
     font-weight:600;
     color: white;
     background-color: #F36950;
-    margin: 30px 33%;
     width: 440px;
     height: 28px;
     border-radius: 20px;
     border-style: none;
+}
+
+
+@media only screen and (max-width: 365px) {
+    #data img{
+        width: 270px;
+    }
+    .divContent{
+        margin-bottom: 30px;
+    }
+    #divaux{
+        text-align: center;
+    }
+    .text{
+        font-size: 18px;
+    }
+    .texto{
+        font-size: 1.2rem;
+    }
+    button{
+        width: 230px;
+        margin-bottom: 20px;
+    }
+
+}
+@media only screen and (min-width: 365px) and (max-width: 500px) {
+    #data img{
+        width: 270px;
+    }
+    .divContent{
+        margin-bottom: 30px;
+    }
+    #divaux{
+        text-align: center;
+    }
+    .text{
+        font-size: 18px;
+    }
+    .texto{
+        font-size: 1.2rem;
+    }
+    button{
+        width: 230px;
+        margin-bottom: 20px;
+    }
+
+}
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+    #data img{
+        width: 270px;
+    }
+    .divContent{
+        margin-bottom: 30px;
+    }
+    #divaux{
+        text-align: center;
+    }
+    .text{
+        font-size: 18px;
+    }
+    .texto{
+        font-size: 1.2rem;
+    }
+    button{
+        width: 230px;
+        margin-bottom: 20px;
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 1260px) {
+    #data img{
+        width: 270px;
+    }
+    .divContent{
+        margin-bottom: 30px;
+    }
+    #divaux{
+        text-align: center;
+    }
+    .text{
+        font-size: 18px;
+    }
+    .texto{
+        font-size: 1.2rem;
+    }
+    button{
+        width: 230px;
+        margin-bottom: 20px;
+    }
+
 }

@@ -18,7 +18,8 @@ ul{
 
 nav ul{
     display: flex;
-    margin-left: 88%;
+    justify-content: flex-end;
+    margin-right: 10px;
 }
 
 nav ul li{
@@ -50,15 +51,21 @@ nav ul li img{
 }
 
 main{
-    position: relative;
-    width: 95vw;
-    height: 95vh;
-    background-color: #FADB8E;
-    margin: 28px 0px 28px 28px;
-    border-radius: 15px;
+    display: flex;
+    justify-content: center;
 }
 
+.div{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 95vh;
+    background-color: #FADB8E;
+    border-radius: 15px;
+    align-items: center;
+}
 main h2{
+    text-align: center;
     font-weight: 500;
     padding: 35px;
     font-size: 26px;
@@ -66,19 +73,19 @@ main h2{
 
 #adicionar{
     font-size: 1.1em;
-    
+    padding:  0px 20px;
     color: white;
     background-color: #F36950;
-    margin: 30vh 33%;
-    width: 440px;
-    height: 28px;
+    margin-top: 40px;
     border-radius: 15px;
     border-style: none;
 }
 
 .botaoAnexo {
-    display: block;
-    width: 200px;
+    width: 80%;
     margin-bottom: 20px;
-    margin-left: 50px;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 20px;
+    border: none;
 }

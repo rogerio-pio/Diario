@@ -41,8 +41,9 @@ body{
 }
 
 .container {
+    margin-top: 70px;
     width: 100%;
-    display: grid;
+    display: flex;
     justify-content: center;
     place-items: center;
     margin-right: auto;
@@ -50,15 +51,16 @@ body{
 }
 
 .box {
-    width: calc(90vw - 40px);
+    display: flex;
+    width: 20%;
     padding: 20px;
     border: 1px solid #ffffff;
     border-radius: 8px;
     background-color: #fbd67e;
     margin-top: 5vh;
-    margin-right: auto;
-    margin-left: auto;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    flex-direction: column;
 }
 
 .user-tab {
@@ -118,41 +120,98 @@ button:hover {
     margin-bottom: 23vh;
 }
 
-@media screen and (max-width: 768px) {
-    .user-tab {
-        width: 12em;
-        height: 12em;
+
+@media only screen and (max-width: 376px) {
+
+
+    .rectangle p {
+        font-size: 60px;
+        height: 25px;
+
+    }
+    .user-tab{
+        width: 180px;
+        height: 180px;
+    }
+    .container{
+        flex-direction: column;
     }
     .rectangle{
-        margin-bottom: 3em;
+        margin-top: 70px;
+        margin-left: 22px;
     }
+  .box{
+      width: 70%;
+  }
 
-    .box {
-        width: calc(90vw - 40px);
-    }
-
-    .label-text {
-        font-size: 1.1em;
-    }
 }
+@media only screen and (min-width: 377px) and (max-width: 500px) {
 
-@media screen and (max-width: 480px) {
-    .box {
-        width: calc(100vw - 6em); /* Reduza a largura para evitar que ultrapasse a tela */
-        max-width: 100%; /* Gaªrante que o box não ultrapasse a largura da tela */
-        margin-right: 1em;
-    }
-    .label-text {
-        font-size: 1em; /* Redefina o tamanho da fonte para o tamanho padrão */
-    }
-    input {
-        width: calc(100% - 16px); /* Reduza o tamanho da entrada para compensar a margem */
-    }
-    
     .rectangle p {
-        font-size: 82px;
+        font-size: 60px;
+        height: 25px;
+
     }
-    .container {
-        padding: 10px;
+    .user-tab{
+        width: 180px;
+        height: 180px;
     }
+
+    .container{
+        flex-direction: column;
+    }
+    .rectangle{
+        margin-top: 70px;
+        margin-left: 22px;
+    }
+    .box{
+        width: 50%;
+    }
+
+}
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+
+    .rectangle p {
+        font-size: 60px;
+        height: 25px;
+
+    }
+    .container{
+        flex-direction: column;
+    }
+    .user-tab{
+        width: 180px;
+        height: 180px;
+    }
+    .rectangle{
+        margin-top: 70px;
+        margin-left: 22px;
+    }
+    .box{
+        width: 30%;
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 1260px) {
+
+    .rectangle p {
+        font-size: 70px;
+        height: 25px;
+
+    }
+    .container{
+        flex-direction: column;
+    }
+    .user-tab{
+        width: 180px;
+        height: 180px;
+    }
+    .rectangle{
+        margin-top: 70px;
+        margin-left: 50px;
+    }
+    .box{
+        width: 30%;
+    }
+
 }

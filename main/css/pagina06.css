@@ -21,7 +21,8 @@ ul{
 
 nav ul{
     display: flex;
-    margin-left: 88%;
+    justify-content: flex-end;
+    margin-right: 30px;
 }
 
 nav ul li{
@@ -37,18 +38,17 @@ nav ul li img{
     
 }
 #flor {
-    width: 650px;
-    height: 330;
+   width: 92%;
     align-items: center;
     border-radius: 30px;
     
 }
 #divmainw{
-    margin: 30px;
+    display: flex;
+    justify-content: center;
 }
 #divmain {
     margin-top: 30px;
-    
     border-radius: 30px;
     display: flex;
     background-color: #FEC74F99;
@@ -56,19 +56,20 @@ nav ul li img{
     align-items: center;
     justify-content: center;
     text-align: center;
-    
-    width: 100%;
+    width: 90%;
 }
 #divaux {
     display: flex;
     flex-direction: column;
-    margin: 30px;
+    margin: 30px 0px;
     text-align: start;
     gap: 10px;
+    width: 90%;
     height: 400px;
     
 }
 .text {
+    font-size: 28px;
     font-weight: 400;
 }
 .areadetexto {
@@ -84,8 +85,7 @@ nav ul li img{
 }
 
 #data img{
-    width: 300px;
-    height: 18px;
+    width: 24%;
 }
 
 #dataAtual {
@@ -102,11 +102,57 @@ nav ul li img{
     
     background-color: #F36950;
     display: flex;
-    width: fit-content;
-    padding: 5px 100px 5px 100px;
+    width: 80%;
     border-radius: 20px;
     color: white;
     margin: 0px 0px 20px 0px;
-    
+    justify-content: center;
+
+
+}
+
+
+@media only screen and (max-width: 365px) {
+
+    #data img{
+        width: 100%;
+    }
+
+    .text{
+        font-size: 18px;
+    }
+
+}
+@media only screen and (min-width: 365px) and (max-width: 500px) {
+
+    #data img{
+        width: 100%;
+    }
+
+    .text{
+        font-size: 18px;
+    }
+
+}
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+
+    #data img{
+        width: 100%;
+    }
+
+    .text{
+        font-size: 18px;
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 1260px) {
+
+    #data img{
+        width: 100%;
+    }
+
+    .text{
+        font-size: 18px;
+    }
 
 }

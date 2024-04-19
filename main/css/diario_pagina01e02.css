@@ -213,3 +213,233 @@ h2{
     margin-bottom: 5px; /* Espaçamento entre os botões */
 
 }
+
+@media only screen and (max-width: 365px) {
+
+
+    /*pagina01*/
+    .mini-tela-content{
+        padding: 12px;
+    }
+    p{
+        font-size: 16px;
+    }
+    .icon-button{
+        margin-top: 20px;
+        padding: 16px;
+    }
+
+    /*pagina02*/
+
+    .background-img{
+        background-size: 1000px;
+        background-position: bottom;
+    }
+
+    #main-pag2{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meu{
+        font-size: 80px;
+    }
+
+    .diario{
+        font-size: 100px;
+        line-height: 80px;
+    }
+
+    #yellow_retangulo{
+        min-width: 200px;
+        max-width: 264px;
+        min-height: 50px;
+        max-height: 50px;
+        position: relative;
+        margin-top: -63px;
+        margin-left: 20px;
+        z-index: 0;
+    }
+
+    .main-login{
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    .additional-buttons{
+        align-items: center;
+    }
+
+
+}
+@media only screen and (min-width: 365px) and (max-width: 500px) {
+
+    .mini-tela-content{
+        padding: 12px;
+    }
+    p{
+        font-size: 20px;
+    }
+    .icon-button{
+        margin-top: 20px;
+        padding: 16px;
+    }
+
+    /*pagina02*/
+
+    .background-img{
+        background-size: 1000px;
+        background-position: bottom;
+    }
+
+    #main-pag2{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meu{
+        font-size: 80px;
+    }
+
+    .diario{
+        font-size: 100px;
+        line-height: 80px;
+    }
+
+    #yellow_retangulo{
+        min-width: 200px;
+        max-width: 264px;
+        min-height: 50px;
+        max-height: 50px;
+        position: relative;
+        margin-top: -63px;
+        margin-left: 20px;
+        z-index: 0;
+    }
+
+    .main-login{
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    .additional-buttons{
+        align-items: center;
+    }
+
+
+}
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+
+    .mini-tela-content{
+        padding: 12px;
+    }
+    p{
+        font-size: 20px;
+    }
+    .icon-button{
+        margin-top: 20px;
+        padding: 16px;
+    }
+
+    /*pagina02*/
+
+    .background-img{
+        background-size: 1000px;
+        background-position: bottom;
+    }
+
+    #main-pag2{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meu{
+        font-size: 80px;
+    }
+
+    .diario{
+        font-size: 100px;
+        line-height: 80px;
+    }
+
+    #yellow_retangulo{
+        min-width: 200px;
+        max-width: 264px;
+        min-height: 50px;
+        max-height: 50px;
+        position: relative;
+        margin-top: -63px;
+        margin-left: 20px;
+        z-index: 0;
+    }
+
+    .main-login{
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    .additional-buttons{
+        align-items: center;
+    }
+
+
+
+}
+@media only screen and (min-width: 768px) and (max-width: 1260px) {
+
+    .mini-tela-content{
+        padding: 12px;
+    }
+    p{
+        font-size: 26px;
+    }
+    .icon-button{
+        margin-top: 20px;
+        padding: 16px;
+    }
+
+
+    /*pagina02*/
+
+    .background-img{
+        background-size: 1000px;
+        background-position: bottom;
+    }
+
+    #main-pag2{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meu{
+        font-size: 80px;
+    }
+
+    .diario{
+        font-size: 100px;
+        line-height: 80px;
+    }
+
+    #yellow_retangulo{
+        min-width: 200px;
+        max-width: 264px;
+        min-height: 50px;
+        max-height: 50px;
+        position: relative;
+        margin-top: -63px;
+        margin-left: 20px;
+        z-index: 0;
+    }
+
+    .main-login{
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    .additional-buttons{
+        align-items: center;
+    }
+
+
+
+}

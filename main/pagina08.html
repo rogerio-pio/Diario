@@ -25,79 +25,82 @@
     </div>
 
     <main>
-        <h2>Aqui é um cantinho para você guardar de recordação se assim desejar<br>
-            Você poderá adicionar as fotos e os vídeos que quiser.</h2>
-        <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
-            <input type="file" name="file" id="fileInput" style="display: none;" multiple>
-        </form>
+        <div class="div">
+            <h2>Aqui é um cantinho para você guardar de recordação se assim desejar<br>
+                Você poderá adicionar as fotos e os vídeos que quiser.</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+                <input type="file" name="file" id="fileInput" style="display: none;" multiple>
+            </form>
 
-        <button id="botao1" class="botaoAnexo" onclick="adicionarAnexo(1)">Adicionar Anexo 1</button>
-        <button id="botao2" class="botaoAnexo" onclick="adicionarAnexo(2)">Adicionar Anexo 2</button>
-        <button id="botao3" class="botaoAnexo" onclick="adicionarAnexo(3)">Adicionar Anexo 3</button>
-        <button id="botao4" class="botaoAnexo" onclick="adicionarAnexo(4)">Adicionar Anexo 4</button>
+            <button id="botao1" class="botaoAnexo" onclick="adicionarAnexo(1)">Adicionar Anexo 1</button>
+            <button id="botao2" class="botaoAnexo" onclick="adicionarAnexo(2)">Adicionar Anexo 2</button>
+            <button id="botao3" class="botaoAnexo" onclick="adicionarAnexo(3)">Adicionar Anexo 3</button>
+            <button id="botao4" class="botaoAnexo" onclick="adicionarAnexo(4)">Adicionar Anexo 4</button>
 
-        <div id="anexosSelecionados"></div>
+            <div id="anexosSelecionados"></div>
 
-        <script>
-            var arquivosSelecionados = [];
+            <script>
+                var arquivosSelecionados = [];
 
-            document.getElementById('fileInput').addEventListener('change', function () {
-                var input = this;
-                var divAnexos = document.getElementById('anexosSelecionados');
+                document.getElementById('fileInput').addEventListener('change', function () {
+                    var input = this;
+                    var divAnexos = document.getElementById('anexosSelecionados');
 
-                if (arquivosSelecionados.length < 4) {
-                    var arquivo = input.files[0];
-                    var nomeArquivo = arquivo.name;
-                    var tamanhoArquivo = arquivo.size;
-                    divAnexos.innerHTML += '<p>Nome do arquivo: ' + nomeArquivo + ', Tamanho: ' + tamanhoArquivo + '$                    arquivosSelecionados.push(arquivo);
-                } else {
-                    alert("Você já adicionou o número máximo de anexos (4).");
+                    if (arquivosSelecionados.length < 4) {
+                        var arquivo = input.files[0];
+                        var nomeArquivo = arquivo.name;
+                        var tamanhoArquivo = arquivo.size;
+                        divAnexos.innerHTML += '<p>Nome do arquivo: ' + nomeArquivo + ', Tamanho: ' + tamanhoArquivo + '$                    arquivosSelecionados.push(arquivo);
+                    } else {
+                        alert("Você já adicionou o número máximo de anexos (4).");
+                    }
+                    input.value = null;
+                });
+
+                function adicionarAnexo(botaoId) {
+                    var input = document.getElementById('fileInput');
+                    input.click();
                 }
-                input.value = null;
-            });
 
-            function adicionarAnexo(botaoId) {
-                var input = document.getElementById('fileInput');
-                input.click();
-            }
-
-            async function enviarArquivosParaBackend() {
-                event.preventDefault();
-                if (arquivosSelecionados.length !== 0) {
-                    const formData = new FormData();
-                    arquivosSelecionados.forEach(function (arquivo) {
-                        formData.append('file', arquivo);
-                    });
-
-                    try {
-                        const response = await fetch('http://srv493893.hstgr.cloud:8080/newImgs', {
-                            method: 'POST',
-                            headers: {
-                                'Authorization': localStorage.getItem('token')
-                            },
-                            body: formData
+                async function enviarArquivosParaBackend() {
+                    event.preventDefault();
+                    if (arquivosSelecionados.length !== 0) {
+                        const formData = new FormData();
+                        arquivosSelecionados.forEach(function (arquivo) {
+                            formData.append('file', arquivo);
                         });
 
-                        if (response.ok) {
-                            alert('Arquivo enviado com sucesso');
-                            window.location.href = 'pagina09.html';
-                        } else {
-                            alert('Erro ao enviar o arquivo');
-                        }
-                    } catch (error) {
-                        alert('Erro de rede');
-                        console.error('Erro:', error);
-                    }
-                } else {
-                    window.location.href = 'pagina09.html';
-                }
-            }
+                        try {
+                            const response = await fetch('http://srv493893.hstgr.cloud:8080/newImgs', {
+                                method: 'POST',
+                                headers: {
+                                    'Authorization': localStorage.getItem('token')
+                                },
+                                body: formData
+                            });
 
-        </script>
-        
-        <a href="#">
-            <button id="adicionar" onclick="enviarArquivosParaBackend()">Adicionar</button>
-        </a>
+                            if (response.ok) {
+                                alert('Arquivo enviado com sucesso');
+                                window.location.href = 'pagina09.html';
+                            } else {
+                                alert('Erro ao enviar o arquivo');
+                            }
+                        } catch (error) {
+                            alert('Erro de rede');
+                            console.error('Erro:', error);
+                        }
+                    } else {
+                        window.location.href = 'pagina09.html';
+                    }
+                }
+
+            </script>
+
+            <a href="#">
+                <button id="adicionar" onclick="enviarArquivosParaBackend()">Adicionar</button>
+            </a>
+        </div>
+
 
     </main>
 
